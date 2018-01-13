@@ -1,0 +1,32 @@
+{
+  "name": "webpack-base",
+  "version": "1.0.0",
+  "description": "project base using webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gotoandplaynowtoo/webpack-base.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "gotoandplaynowtoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gotoandplaynowtoo/webpack-base/issues"
+  },
+  "homepage": "https://github.com/gotoandplaynowtoo/webpack-base#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.10.0"
+  }
+}
