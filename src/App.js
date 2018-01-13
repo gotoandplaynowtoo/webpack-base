@@ -1,9 +1,12 @@
+
 import 'babel-polyfill';
 
-import Class1 from './lib/Class1';
-import Class2 from './lib/Class2';
+import './app.scss';
 
-class Main {
+import Class1 from './js/lib/Class1';
+import Class2 from './js/lib/Class2';
+
+class App {
     static main(args) {
         console.log('Main.js works!');
         Class1.test();
@@ -11,4 +14,4 @@ class Main {
     }
 }
 
-Main.main([]);
+App.main([]);

@@ -1,9 +1,15 @@
 
 var path = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+var extractSass = new ExtractTextPlugin({
+    filename: "[name].bundle.css",
+    disable: process.env.NODE_ENV === "development"
+});
 
 module.exports = {
     entry: {
-        project: './src/js/Main.js'
+        app: './src/App.js'
     },
     output: {
         filename: '[name].bundle.js',
@@ -19,19 +25,20 @@ module.exports = {
             { 
                 test: /\.scss$/,
                 exclude: /node_modules/, 
-                use: [
-                    {
-                        loader: "style-loader"
-                    }, 
-                    {
+                use: extractSass.extract({
+                    use: [{
                         loader: "css-loader"
-                    }, 
-                    {
+                    }, {
                         loader: "sass-loader"
-                    }
-                ]
+                    }],
+                    // use style-loader in development
+                    fallback: "style-loader"
+                })
             }
         ]
     },
+    plugins: [
+        extractSass
+    ],
     watch: true
 };
